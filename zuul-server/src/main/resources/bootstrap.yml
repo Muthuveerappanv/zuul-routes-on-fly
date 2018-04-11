@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: zuul-server
+  cloud:
+    bus:
+      enabled: false
+    config:
+      enabled: false
+---
+spring:
+  profiles: dynamic
+  cloud:
+    bus:
+      enabled: true
+    config:
+      enabled: true
+      uri: https://boiling-ravine-40322.herokuapp.com/
+  rabbitmq:
+    host: hornet.rmq.cloudamqp.com
+    virtual-host: eebfifqf
+    username: eebfifqf
+    password: ZGIjwiaJxb7-kcN8a_mvu_kwU9sPgZ7K
+endpoints:
+  refresh:
+    enabled: true

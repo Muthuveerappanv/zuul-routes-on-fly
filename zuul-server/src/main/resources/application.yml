@@ -1,0 +1,32 @@
+server:
+  port: 8762
+  servlet-path: /
+management:
+  context-path: /admin
+
+endpoints:
+  enabled: false
+  info:
+    enabled: true
+  health:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    
+zuul:
+  ignoredServices: '*'
+  routes:
+    zuulDemo1:
+      path: /zuul1/**
+      serviceId: actor-service
+      stripPrefix: true

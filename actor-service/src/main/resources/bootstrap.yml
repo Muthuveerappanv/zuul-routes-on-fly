@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: actor-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: https://boiling-ravine-40322.herokuapp.com/
