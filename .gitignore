@@ -1,2 +1,4 @@
 .settings
 target
+.mvn
+.sts4-cache
