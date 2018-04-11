@@ -1,0 +1,37 @@
+server:
+  port: ${PORT:8888}
+management:
+  context-path: /admin
+
+endpoints:
+  enabled: false
+  info:
+    enabled: true
+  health:
+    enabled: true
+  metrics:
+    enabled: true  
+  
+spring:
+  profiles:
+    active: config-monitor
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/muthu8891/spring-config-server
+    bus:
+      enabled: false
+      
+      
+---
+spring:
+  profiles: config-monitor
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    host: hornet.rmq.cloudamqp.com
+    virtual-host: eebfifqf
+    username: eebfifqf
+    password: ZGIjwiaJxb7-kcN8a_mvu_kwU9sPgZ7K
